@@ -13,6 +13,9 @@ services:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     working_dir: /var/www
+    volumes:
+       - ./:/var/www
+       - ./confs/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
 
@@ -24,6 +27,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./confs/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
 
@@ -35,16 +41,21 @@ services:
     ports:
       - "3306:3306"
     environment:
-      # Generate password with command: openssl rand -base64 32
-      MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: 63q4H8M+qxvPKfO74OzNBcbuRKdBiGzJfv8/KGBMJf0=
+      # Tip! Get strong password using: openssl rand -base64 32
+      MYSQL_DATABASE: [db_name]
+      MYSQL_ROOT_PASSWORD: [db_pwd]
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql
+      - ./confs/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
