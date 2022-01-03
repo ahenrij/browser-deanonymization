@@ -40,6 +40,8 @@ services:
       MYSQL_ROOT_PASSWORD: 63q4H8M+qxvPKfO74OzNBcbuRKdBiGzJfv8/KGBMJf0=
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
     networks:
       - app-network
 
