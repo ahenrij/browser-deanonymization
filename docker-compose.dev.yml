@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: digitalocean.com/php
     container_name: app
     restart: unless-stopped
     tty: true
@@ -25,7 +24,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "80:80"
+      - "8000:80"
       - "443:443"
     volumes:
       - ./:/var/www
@@ -42,13 +41,27 @@ services:
       - "3306:3306"
     environment:
       # Tip! Get strong password using: openssl rand -base64 32
-      MYSQL_DATABASE: [db_name]
-      MYSQL_ROOT_PASSWORD: [db_pwd]
+      MYSQL_DATABASE: db
+      MYSQL_ROOT_PASSWORD: VVPkbf4vYTybY3MZdGSBKiwiFQ43X1wO1ktezEtzeQI=
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql
       - ./confs/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+
+  adminer:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: adminer
+    restart: unless-stopped
+    tty: true
+    ports:
+      - '8001:80'
+    environment:
+      PMA_HOST: db
     networks:
       - app-network
 
