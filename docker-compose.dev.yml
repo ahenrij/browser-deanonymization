@@ -41,8 +41,8 @@ services:
       - "3306:3306"
     environment:
       # Tip! Get strong password using: openssl rand -base64 32
-      MYSQL_DATABASE: db
-      MYSQL_ROOT_PASSWORD: VVPkbf4vYTybY3MZdGSBKiwiFQ43X1wO1ktezEtzeQI=
+      MYSQL_DATABASE: [db_name]
+      MYSQL_ROOT_PASSWORD: [db_pwd]
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:

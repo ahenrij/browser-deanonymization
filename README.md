@@ -31,9 +31,8 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ### Requirements
 
-* Docker
-* Laravel
-* Composer
+* [Docker](https://docs.docker.com/get-docker/)
+* [Composer](https://getcomposer.org/download/)
 
 ### Get started
 
@@ -44,12 +43,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 cp .env.example .env
 ```
 
-3. Generate application key
-```script
-docker-compose exec app php artisan key:generate
-```
-
-4. Start application stack in development mode
+3. Start application stack in development mode
 ```script
 scripts/start-dev.sh
 ```
