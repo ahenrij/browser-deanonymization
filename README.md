@@ -35,10 +35,21 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 * Laravel
 * Composer
 
-### Installation
+### Get started
 
 1. Change in *docker-compose.yml* variables ```[db_name]``` and ```[db_pwd]``` with appropriate database name and password.
 
-2. Copy *.env.example* to *.env* and update in this file as well database connection with the same credentials.
+2. Copy *.env.example* to *.env* and update in this file as well, database connection with the same credentials.
 ```script
 cp .env.example .env
+```
+
+3. Generate application key
+```script
+docker-compose exec app php artisan key:generate
+```
+
+4. Start application stack in development mode
+```script
+scripts/start-dev.sh
+```
