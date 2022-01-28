@@ -43,6 +43,13 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 cp .env.example .env
 ```
 
+For database credentials, see docker-compose file.
+
+3. Install dependencies
+```script
+composer install
+```
+
 3. Start application stack in development mode
 ```script
 scripts/start-dev.sh
