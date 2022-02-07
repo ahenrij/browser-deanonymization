@@ -5,3 +5,5 @@ vendor
 .idea
 .vscode
 confs
+node_modules
+package-lock.json
