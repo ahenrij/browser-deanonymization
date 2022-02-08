@@ -14,16 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container mt-5"
+  "class": "h-screen mx-0 bg-sky-700 flex"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-12 text-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-3xl font-bold underline"
-}, "Welcome!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "On our website..")], -1
-/* HOISTED */
-);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"text-left self-center mx-12 px-12\"><h1 class=\"text-7xl font-sans font-bold text-white py-2\">Welcome !</h1><p class=\"text-white text-2xl\">On our browser fingerprint getter website.</p><br><p class=\"animate-bounce my-12 mt-12 text-white\">Now we know you, but who are we ? <span class=\"underline\">That&#39;s a secret we&#39;ll never tell</span>.</p></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
