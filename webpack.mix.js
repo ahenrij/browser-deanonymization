@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const os = require("os");
 
 /*
  |--------------------------------------------------------------------------
@@ -16,7 +17,12 @@ mix.js('resources/js/app.js', 'public/js').vue()
         require("tailwindcss"),
     ]);
 mix.browserSync({
-    host: "localhost", 
+    host: "localhost",
     proxy: 'webserver',
     open: false,
-})
+});
+mix.webpackConfig({ 
+    resolve: {
+        
+    }
+});
